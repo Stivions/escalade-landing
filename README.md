@@ -20,6 +20,10 @@ The public agent backend lives at:
 
 https://github.com/Stivions/0g-creator-agent-network
 
+This landing is published at:
+
+https://github.com/Stivions/escalade-landing
+
 0G Compute is the primary inference layer in that repository. The landing does
 not expose backend credentials and does not claim that local fallback proofs
 were uploaded to 0G Storage.
@@ -81,10 +85,26 @@ The YouTube snapshot endpoint is available at:
 
 ## Submission Links
 
+- Public landing: https://github.com/Stivions/escalade-landing
 - Public backend: https://github.com/Stivions/0g-creator-agent-network
 - 0G Zero Cup criteria: https://0g.ai/arena/zero-cup/submission-criteria
 - X account: https://x.com/anonimo1is
 - 0G Discord: https://discord.com/invite/0glabs
+
+## Zero Cup Alignment
+
+- **AI-native on 0G:** the backend uses 0G Compute as its primary inference
+  provider. A real provider health check and inference request are available in
+  the backend scripts.
+- **Public source:** both the landing and backend repositories are public.
+- **Working build:** the landing passes lint, TypeScript, production build, and
+  standalone browser checks.
+- **No false storage claim:** 0G Storage support exists in the backend, but the
+  landing describes it as optional until production uploads are enabled.
+- **Safe publishing:** real posting remains disabled by default.
+
+The live URL and demo video should be attached to the tournament submission
+after the final domain is configured.
 
 ## Safety
 

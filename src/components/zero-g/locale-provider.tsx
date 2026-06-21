@@ -18,7 +18,7 @@ const COPY = {
     },
     hero: {
       eyebrow: "Built for social execution with 0G",
-      title: "AI agents for X and YouTube, with proof on 0G.",
+      title: "AI agents for X and YouTube, powered by 0G Compute.",
       description:
         "Escalade turns live internet signals into channel-ready posts, Shorts, and verifiable release history.",
     },
@@ -43,7 +43,8 @@ const COPY = {
       computeTitle: "0G Compute",
       computeBody: "Scores signals, routes decisions, and keeps the generation loop moving.",
       storageTitle: "0G Storage",
-      storageBody: "Anchors release history and proof so outputs can be checked later.",
+      storageBody:
+        "The integration is ready to upload release proofs when enabled; local hashes remain the safe fallback.",
     },
     runtime: {
       eyebrow: "Live public channel state",
@@ -143,7 +144,7 @@ const COPY = {
     },
     hero: {
       eyebrow: "Construido para ejecucion social con 0G",
-      title: "Agentes de IA para X y YouTube, con prueba en 0G.",
+      title: "Agentes de IA para X y YouTube, impulsados por 0G Compute.",
       description:
         "Escalade convierte senales vivas de internet en posts, Shorts e historial verificable de cada lanzamiento.",
     },
@@ -168,7 +169,8 @@ const COPY = {
       computeTitle: "0G Compute",
       computeBody: "Puntua senales, enruta decisiones y mantiene vivo el ciclo de generacion.",
       storageTitle: "0G Storage",
-      storageBody: "Ancla el historial de lanzamiento y la prueba para poder revisarlos despues.",
+      storageBody:
+        "La integracion puede subir pruebas cuando se habilita; los hashes locales siguen siendo el fallback seguro.",
     },
     runtime: {
       eyebrow: "Estado publico en vivo",

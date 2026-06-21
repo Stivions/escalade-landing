@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: "Escalade - Autonomous content infrastructure",
   description:
-    "Autonomous AI infrastructure that turns live internet signals and raw footage into publish-ready content for X and YouTube Shorts, with proof powered by 0G.",
+    "Autonomous AI infrastructure that turns live internet signals and raw footage into publish-ready content for X and YouTube Shorts, with decisions powered by 0G Compute.",
   keywords: [
     "Escalade",
     "agent network",
