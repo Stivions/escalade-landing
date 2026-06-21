@@ -4,8 +4,11 @@ import { Reveal } from "./reveal";
 
 export function ZeroGSection() {
   return (
-    <section id="0g" className="bg-primary px-6 py-24 text-inverted lg:px-10 lg:py-32">
-      <div className="mx-auto max-w-[1200px]">
+    <section
+      id="0g"
+      className="relative overflow-hidden bg-primary px-6 py-24 text-inverted lg:px-10 lg:py-32"
+    >
+      <div className="relative z-10 mx-auto max-w-[1200px]">
         <Reveal>
           <p className="text-[13px] font-medium uppercase tracking-[0.18em] text-inverted/50">
             Impulsado por 0G

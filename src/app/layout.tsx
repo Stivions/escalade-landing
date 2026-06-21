@@ -1,29 +1,16 @@
 import type { Metadata } from "next";
-import { Inter, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  display: "swap",
-});
-
-const instrumentSerif = Instrument_Serif({
-  variable: "--font-instrument-serif",
-  subsets: ["latin"],
-  weight: ["400"],
-  style: ["normal", "italic"],
-  display: "swap",
-});
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/+$/, "") ??
+  "http://localhost:3000";
 
 export const metadata: Metadata = {
-  // TODO: reemplazar por el dominio real cuando exista
-  metadataBase: new URL("https://escalade.example"),
-  title: "Escalade — Infraestructura Autónoma de Creación de Contenido",
+  metadataBase: new URL(siteUrl),
+  title: "Escalade - Autonomous content infrastructure",
   description:
-    "Plataforma autónoma de agentes de IA que transforma señales de internet y videos sin procesar en contenido listo para publicar en X y YouTube Shorts. Impulsada por 0G Compute y 0G Storage.",
+    "Autonomous AI infrastructure that turns live internet signals and raw footage into publish-ready content for X and YouTube Shorts, with proof powered by 0G.",
   keywords: [
     "Escalade",
     "agent network",
@@ -37,14 +24,14 @@ export const metadata: Metadata = {
   authors: [{ name: "Escalade" }],
   openGraph: {
     title: "Escalade",
-    description: "Infraestructura Autónoma de Creación de Contenido Impulsada por 0G.",
+    description: "Autonomous content infrastructure powered by 0G.",
     siteName: "Escalade",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "Escalade",
-    description: "Infraestructura Autónoma de Creación de Contenido Impulsada por 0G.",
+    description: "Autonomous content infrastructure powered by 0G.",
   },
 };
 
@@ -54,10 +41,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" suppressHydrationWarning>
-      <body
-        className={`${inter.variable} ${instrumentSerif.variable} antialiased bg-paper text-primary`}
-      >
+    <html lang="en" suppressHydrationWarning>
+      <body className="antialiased bg-paper text-primary">
         {children}
         <Toaster />
       </body>

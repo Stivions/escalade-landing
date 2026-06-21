@@ -1,71 +1,113 @@
 "use client";
 
-const FOOTER_LINKS = [
+import { Github, MessageCircleMore, Users } from "lucide-react";
+import { useLocaleCopy } from "./locale-provider";
+
+const COLLABORATORS = [
+  { label: "fxckcode", href: "https://github.com/fxckcode" },
+  { label: "Stivions", href: "https://github.com/Stivions" },
+  { label: "Precis0x", href: "https://github.com/Precis0x" },
+] as const;
+
+const PROJECT_LINKS = [
   {
-    title: "Ecosistema",
-    links: [
-      { label: "0G Compute", href: "#", external: true }, // TODO: URL real
-      { label: "0G Storage", href: "#", external: true }, // TODO: URL real
-      { label: "Documentación", href: "#", external: true }, // TODO: URL real
-      { label: "GitHub", href: "#", external: true }, // TODO: URL real
-    ],
+    key: "publicRepo",
+    href: "https://github.com/Stivions/0g-creator-agent-network",
+    icon: Github,
   },
   {
-    title: "Secciones",
-    links: [
-      { label: "Problema", href: "#problema" },
-      { label: "Agentes", href: "#agentes" },
-      { label: "0G", href: "#0g" },
-      { label: "Pruebas", href: "#pruebas" },
-      { label: "Métricas", href: "#metricas" },
-      { label: "Flujo", href: "#flujo" },
-      { label: "Resultados", href: "#resultados" },
-    ],
+    key: "discord",
+    href: "https://discord.com/invite/0glabs",
+    icon: MessageCircleMore,
   },
-];
+] as const;
 
 export function SiteFooter() {
+  const { copy } = useLocaleCopy();
+  const footerLinks = [
+    { label: copy.footer.problem, href: "#problema" },
+    { label: copy.footer.flow, href: "#flujo" },
+    { label: copy.footer.runtime, href: "#agentes" },
+    { label: copy.footer.results, href: "#resultados" },
+  ];
+
   return (
     <footer className="border-t border-border-primary bg-paper px-6 py-16 lg:px-10">
       <div className="mx-auto max-w-[1200px]">
-        <div className="grid gap-12 md:grid-cols-[2fr_1fr_1fr]">
+        <div className="grid gap-10 lg:grid-cols-[1.2fr_1fr_1fr]">
           <div>
             <span className="font-display text-3xl leading-none tracking-tight text-primary">
               Escalade
             </span>
             <p className="mt-5 max-w-sm text-[15px] leading-relaxed text-secondary">
-              Infraestructura autónoma de creación de contenido. Agentes que
-              investigan, deciden, crean, publican y demuestran cada acción.
+              {copy.footer.description}
             </p>
           </div>
 
-          {FOOTER_LINKS.map((col) => (
-            <div key={col.title}>
+          <div>
+            <p className="text-[12px] font-medium uppercase tracking-[0.15em] text-tertiary">
+              {copy.footer.sections}
+            </p>
+            <ul className="mt-4 flex flex-wrap gap-3">
+              {footerLinks.map((link) => (
+                <li key={link.label}>
+                  <a
+                    href={link.href}
+                    className="inline-flex items-center rounded-full border border-border-primary px-4 py-2 text-[13px] text-secondary transition-colors hover:text-primary"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="space-y-5">
+            <div>
               <p className="text-[12px] font-medium uppercase tracking-[0.15em] text-tertiary">
-                {col.title}
+                {copy.footer.project}
               </p>
-              <ul className="mt-4 flex flex-col gap-2.5">
-                {col.links.map((l) => (
-                  <li key={l.label}>
-                    <a
-                      href={l.href}
-                      {...(l.external
-                        ? { target: "_blank", rel: "noopener noreferrer" }
-                        : {})}
-                      className="text-[14px] text-secondary transition-colors hover:text-primary"
-                    >
-                      {l.label}
-                    </a>
-                  </li>
+              <div className="mt-4 flex flex-wrap gap-3">
+                {PROJECT_LINKS.map(({ key, href, icon: Icon }) => (
+                  <a
+                    key={href}
+                    href={href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full border border-border-primary px-4 py-2 text-[13px] text-secondary transition-colors hover:text-primary"
+                  >
+                    <Icon className="size-4" />
+                    {copy.footer[key]}
+                  </a>
                 ))}
-              </ul>
+              </div>
             </div>
-          ))}
+
+            <div>
+              <p className="text-[12px] font-medium uppercase tracking-[0.15em] text-tertiary">
+                {copy.footer.collaborators}
+              </p>
+              <div className="mt-4 flex flex-wrap gap-3">
+                {COLLABORATORS.map(({ label, href }) => (
+                  <a
+                    key={href}
+                    href={href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full border border-border-primary px-4 py-2 text-[13px] text-secondary transition-colors hover:text-primary"
+                  >
+                    <Users className="size-4" />
+                    {label}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div className="mt-16 flex flex-col items-start justify-between gap-3 border-t border-border-primary pt-6 text-[12px] text-tertiary sm:flex-row sm:items-center">
-          <p>© {new Date().getFullYear()} Escalade</p>
-          <p>Autónomo · Verificable · 0G</p>
+        <div className="mt-14 flex flex-col items-start justify-between gap-3 border-t border-border-primary pt-6 text-[12px] text-tertiary sm:flex-row sm:items-center">
+          <p>&copy; {new Date().getFullYear()} Escalade</p>
+          <p>{copy.footer.tagline}</p>
         </div>
       </div>
     </footer>

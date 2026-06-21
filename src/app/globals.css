@@ -55,6 +55,8 @@
 
 :root {
   --radius: 0.625rem;
+  --font-inter: "Segoe UI", Inter, system-ui, sans-serif;
+  --font-instrument-serif: Georgia, "Times New Roman", serif;
 
   /* Refined palette — pure white background, near-black ink */
   --paper: #ffffff;
