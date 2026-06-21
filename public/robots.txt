@@ -13,5 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-# TODO: reemplazar por el dominio real cuando exista
-Sitemap: https://escalade.example/sitemap.xml
+Sitemap: https://escalade.dev/sitemap.xml
