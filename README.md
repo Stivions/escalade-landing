@@ -18,7 +18,7 @@ the public backend repository used for the Zero Cup submission.
 
 The public agent backend lives at:
 
-https://github.com/Stivions/0g-creator-agent-network
+https://github.com/Stivions/escalade-automation
 
 This landing is published at:
 
@@ -93,7 +93,7 @@ The YouTube snapshot endpoint is available at:
 ## Submission Links
 
 - Public landing: https://github.com/Stivions/escalade-landing
-- Public backend: https://github.com/Stivions/0g-creator-agent-network
+- Public backend: https://github.com/Stivions/escalade-automation
 - 0G Zero Cup criteria: https://0g.ai/arena/zero-cup/submission-criteria
 - X account: https://x.com/anonimo1is
 - 0G Discord: https://discord.com/invite/0glabs
@@ -110,7 +110,8 @@ The YouTube snapshot endpoint is available at:
   landing describes it as optional until production uploads are enabled.
 - **Safe publishing:** real posting remains disabled by default.
 
-Attach the live URL and demo video to the tournament submission.
+Attach the live product URL to the tournament submission. Add a product video
+only if the submission form requires one.
 
 ## Safety
 
