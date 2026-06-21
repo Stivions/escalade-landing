@@ -1,0 +1,23 @@
+[Unit]
+Description=Escalade production landing
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=stivion
+Group=stivion
+WorkingDirectory=/home/stivion/apps/escalade-landing/.next/standalone
+Environment=NODE_ENV=production
+Environment=HOSTNAME=127.0.0.1
+Environment=PORT=3100
+ExecStart=/usr/bin/node server.js
+Restart=always
+RestartSec=5
+TimeoutStopSec=20
+KillSignal=SIGTERM
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

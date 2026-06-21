@@ -24,6 +24,10 @@ This landing is published at:
 
 https://github.com/Stivions/escalade-landing
 
+The production site is available at:
+
+https://escalade.dev
+
 0G Compute is the primary inference layer in that repository. The landing does
 not expose backend credentials and does not claim that local fallback proofs
 were uploaded to 0G Storage.
@@ -66,8 +70,11 @@ PORT=3000 HOSTNAME=0.0.0.0 npm run start
 Set the final public URL before building:
 
 ```bash
-NEXT_PUBLIC_SITE_URL=https://your-domain.example
+NEXT_PUBLIC_SITE_URL=https://escalade.dev
 ```
+
+The deployment templates in `deploy/` run the standalone server on
+`127.0.0.1:3100` behind Nginx. TLS is issued and renewed by Certbot.
 
 ## Verification
 
@@ -103,8 +110,7 @@ The YouTube snapshot endpoint is available at:
   landing describes it as optional until production uploads are enabled.
 - **Safe publishing:** real posting remains disabled by default.
 
-The live URL and demo video should be attached to the tournament submission
-after the final domain is configured.
+Attach the live URL and demo video to the tournament submission.
 
 ## Safety
 
