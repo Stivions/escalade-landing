@@ -10,28 +10,30 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: "Escalade - Autonomous content infrastructure",
   description:
-    "Autonomous AI infrastructure that turns live internet signals and raw footage into publish-ready content for X and YouTube Shorts, with decisions powered by 0G Compute.",
+    "Live AI agent infrastructure that turns internet signals into X and YouTube content with 0G Compute and verifiable publication receipts.",
   keywords: [
     "Escalade",
     "agent network",
     "autonomous agents",
     "AI content",
     "0G Compute",
-    "0G Storage",
+    "publication proof",
     "verifiable AI",
     "content automation",
   ],
   authors: [{ name: "Escalade" }],
   openGraph: {
     title: "Escalade",
-    description: "Autonomous content infrastructure powered by 0G.",
+    description:
+      "AI agents for creator revenue with 0G Compute and verifiable release receipts.",
     siteName: "Escalade",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "Escalade",
-    description: "Autonomous content infrastructure powered by 0G.",
+    description:
+      "AI agents for creator revenue with 0G Compute and verifiable release receipts.",
   },
 };
 

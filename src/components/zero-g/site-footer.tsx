@@ -12,7 +12,7 @@ const COLLABORATORS = [
 const PROJECT_LINKS = [
   {
     key: "publicRepo",
-    href: "https://github.com/Stivions/0g-creator-agent-network",
+    href: "https://github.com/Stivions/escalade-automation",
     icon: Github,
   },
   {
@@ -27,6 +27,7 @@ export function SiteFooter() {
   const footerLinks = [
     { label: copy.footer.problem, href: "#problema" },
     { label: copy.footer.flow, href: "#flujo" },
+    { label: copy.footer.why0g, href: "#0g-proof" },
     { label: copy.footer.runtime, href: "#agentes" },
     { label: copy.footer.results, href: "#resultados" },
   ];

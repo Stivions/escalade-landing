@@ -10,6 +10,7 @@ const COPY = {
   en: {
     nav: {
       problem: "Problem",
+      why0g: "Why 0G",
       runtime: "Runtime",
       results: "Proof",
       partner: "0G Partner",
@@ -45,6 +46,42 @@ const COPY = {
       storageTitle: "0G Storage",
       storageBody:
         "The integration is ready to upload release proofs when enabled; local hashes remain the safe fallback.",
+    },
+    proofLayer: {
+      eyebrow: "Verifiable publication proof",
+      title: "Not another scheduler. A receipt for every agent decision.",
+      description:
+        "X and YouTube can show what went public, but they do not prove which AI agent chose it, why it was created, what model produced it, or what happened before release. Escalade uses 0G Compute as the decision layer and attaches a proof receipt to each cycle.",
+      statusLink: "Runtime status",
+      proofsLink: "Proof ledger",
+      receiptTitle: "Release receipt",
+      fallback: {
+        source: "latest internet signal",
+        hash: "hash pending",
+        storage: "local proof fallback",
+      },
+      stats: {
+        decisions: "0G decisions",
+        proofs: "Proof receipts",
+        channels: "Live channels",
+        latency: "Avg latency",
+      },
+      receipt: {
+        source: "Source signal",
+        agent: "Agent identity",
+        compute: "0G provider",
+        model: "Model",
+        hash: "Content hash",
+        storage: "Proof layer",
+      },
+      whyTitle: "Why blockchain here?",
+      whyBody:
+        "Because the valuable part is not just publishing. The valuable part is proving the execution path: what the agent saw, what it decided, when it decided, and what release it prepared or sent.",
+      checks: [
+        "Agent identity and model are recorded with each decision.",
+        "The source signal and generated output are hashed.",
+        "Approved releases can attach the final X or YouTube URL.",
+      ],
     },
     runtime: {
       eyebrow: "Live public channel state",
@@ -121,6 +158,7 @@ const COPY = {
       discord: "0G Discord",
       problem: "Problem",
       flow: "Flow",
+      why0g: "Why 0G",
       runtime: "Runtime",
       results: "Proof",
       tagline: "Autonomous / Verifiable / 0G",
@@ -136,6 +174,7 @@ const COPY = {
   es: {
     nav: {
       problem: "Problema",
+      why0g: "Por que 0G",
       runtime: "Tiempo real",
       results: "Pruebas",
       partner: "Partner 0G",
@@ -171,6 +210,42 @@ const COPY = {
       storageTitle: "0G Storage",
       storageBody:
         "La integracion puede subir pruebas cuando se habilita; los hashes locales siguen siendo el fallback seguro.",
+    },
+    proofLayer: {
+      eyebrow: "Prueba verificable de publicacion",
+      title: "No es otro scheduler. Es un recibo por cada decision del agente.",
+      description:
+        "X y YouTube muestran que algo salio, pero no prueban que agente de IA lo eligio, por que se creo, que modelo lo produjo o que paso antes del lanzamiento. Escalade usa 0G Compute como capa de decision y adjunta un recibo de prueba a cada ciclo.",
+      statusLink: "Estado runtime",
+      proofsLink: "Proof ledger",
+      receiptTitle: "Recibo de lanzamiento",
+      fallback: {
+        source: "ultima senal de internet",
+        hash: "hash pendiente",
+        storage: "fallback local de prueba",
+      },
+      stats: {
+        decisions: "Decisiones 0G",
+        proofs: "Recibos de prueba",
+        channels: "Canales vivos",
+        latency: "Latencia media",
+      },
+      receipt: {
+        source: "Senal fuente",
+        agent: "Identidad del agente",
+        compute: "Proveedor 0G",
+        model: "Modelo",
+        hash: "Hash del contenido",
+        storage: "Capa de prueba",
+      },
+      whyTitle: "Por que blockchain aqui?",
+      whyBody:
+        "Porque lo valioso no es solo publicar. Lo valioso es probar la ruta de ejecucion: que vio el agente, que decidio, cuando decidio y que lanzamiento preparo o envio.",
+      checks: [
+        "La identidad del agente y el modelo quedan registrados.",
+        "La senal fuente y el output generado quedan hasheados.",
+        "Los lanzamientos aprobados pueden adjuntar el link final de X o YouTube.",
+      ],
     },
     runtime: {
       eyebrow: "Estado publico en vivo",
@@ -247,6 +322,7 @@ const COPY = {
       discord: "Discord 0G",
       problem: "Problema",
       flow: "Flujo",
+      why0g: "Por que 0G",
       runtime: "Tiempo real",
       results: "Pruebas",
       tagline: "Autonomo / Verificable / 0G",

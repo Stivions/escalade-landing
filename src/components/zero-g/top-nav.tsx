@@ -11,6 +11,7 @@ export function TopNav() {
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const navLinks = [
     { href: "#problema", label: copy.nav.problem },
+    { href: "#0g-proof", label: copy.nav.why0g },
     { href: "#agentes", label: copy.nav.runtime },
     { href: "#resultados", label: copy.nav.results },
   ];

@@ -11,6 +11,10 @@ the public backend repository used for the Zero Cup submission.
 - Public YouTube channel totals and recent uploads are read server-side from
   official YouTube channel pages and RSS feeds.
 - The dashboard refreshes every two minutes and never displays guessed metrics.
+- The 0G proof section reads the public runtime dashboard and shows real
+  decision, proof, channel and latency counters.
+- Public runtime links use `https://escalade.dev/api/runtime/*`, not the raw
+  VPS address.
 - English and Spanish are available from the navigation.
 - The hero video and optional soundtrack are served locally from `public/`.
 
@@ -31,6 +35,13 @@ https://escalade.dev
 0G Compute is the primary inference layer in that repository. The landing does
 not expose backend credentials and does not claim that local fallback proofs
 were uploaded to 0G Storage.
+
+## Why 0G Is Visible
+
+Escalade is not positioned as a normal scheduler. The page explains the proof
+layer directly: each release cycle can show the source signal, agent identity,
+0G provider/model, timestamp, content hash, storage mode and platform release
+status. That is the reason 0G matters for X and YouTube workflows.
 
 ## Stack
 
@@ -103,6 +114,8 @@ The YouTube snapshot endpoint is available at:
 - **AI-native on 0G:** the backend uses 0G Compute as its primary inference
   provider. A real provider health check and inference request are available in
   the backend scripts.
+- **Clear 0G story:** the landing now explains why centralized social platforms
+  still need an external proof layer for AI-agent execution.
 - **Public source:** both the landing and backend repositories are public.
 - **Working build:** the landing passes lint, TypeScript, production build, and
   standalone browser checks.

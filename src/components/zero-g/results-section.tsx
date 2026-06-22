@@ -15,7 +15,7 @@ const ACCOUNT_LINKS = [
   { label: "YouTube / visionclip", href: "https://www.youtube.com/@visionclipvn" },
   {
     label: "Public repo",
-    href: "https://github.com/Stivions/0g-creator-agent-network",
+    href: "https://github.com/Stivions/escalade-automation",
   },
 ] as const;
 
