@@ -48,23 +48,33 @@ const COPY = {
         "The integration is ready to upload release proofs when enabled; local hashes remain the safe fallback.",
     },
     proofLayer: {
-      eyebrow: "Verifiable publication proof",
-      title: "Not another scheduler. A receipt for every agent decision.",
+      eyebrow: "Why 0G",
+      title: "Proof that agents really executed.",
       description:
-        "X and YouTube can show what went public, but they do not prove which AI agent chose it, why it was created, what model produced it, or what happened before release. Escalade uses 0G Compute as the decision layer and attaches a proof receipt to each cycle.",
+        "Escalade records the signal, agent, model, content hash, and release state behind every post or Short.",
       statusLink: "Runtime status",
       proofsLink: "Proof ledger",
       receiptTitle: "Release receipt",
+      cardEyebrow: "Publication path",
+      cardTitle: "From signal to receipt",
       fallback: {
         source: "latest internet signal",
         hash: "hash pending",
         storage: "local proof fallback",
+        release: "release prepared",
       },
       stats: {
-        decisions: "0G decisions",
-        proofs: "Proof receipts",
-        channels: "Live channels",
-        latency: "Avg latency",
+        decisions: "Decisions",
+        proofs: "Receipts",
+        channels: "Channels",
+        latency: "Latency",
+      },
+      path: {
+        source: "Signal",
+        agent: "Agent",
+        compute: "0G Compute",
+        hash: "Hash",
+        release: "Release",
       },
       receipt: {
         source: "Source signal",
@@ -76,7 +86,7 @@ const COPY = {
       },
       whyTitle: "Why blockchain here?",
       whyBody:
-        "Because the valuable part is not just publishing. The valuable part is proving the execution path: what the agent saw, what it decided, when it decided, and what release it prepared or sent.",
+        "X and YouTube show the output. 0G makes the execution trail auditable: what was seen, who decided, which model ran, and what got released.",
       checks: [
         "Agent identity and model are recorded with each decision.",
         "The source signal and generated output are hashed.",
@@ -212,23 +222,33 @@ const COPY = {
         "La integracion puede subir pruebas cuando se habilita; los hashes locales siguen siendo el fallback seguro.",
     },
     proofLayer: {
-      eyebrow: "Prueba verificable de publicacion",
-      title: "No es otro scheduler. Es un recibo por cada decision del agente.",
+      eyebrow: "Por que 0G",
+      title: "Prueba de que los agentes ejecutaron.",
       description:
-        "X y YouTube muestran que algo salio, pero no prueban que agente de IA lo eligio, por que se creo, que modelo lo produjo o que paso antes del lanzamiento. Escalade usa 0G Compute como capa de decision y adjunta un recibo de prueba a cada ciclo.",
+        "Escalade registra la senal, el agente, el modelo, el hash del contenido y el estado de publicacion de cada post o Short.",
       statusLink: "Estado runtime",
       proofsLink: "Proof ledger",
       receiptTitle: "Recibo de lanzamiento",
+      cardEyebrow: "Ruta de publicacion",
+      cardTitle: "De senal a recibo",
       fallback: {
         source: "ultima senal de internet",
         hash: "hash pendiente",
         storage: "fallback local de prueba",
+        release: "lanzamiento preparado",
       },
       stats: {
-        decisions: "Decisiones 0G",
-        proofs: "Recibos de prueba",
-        channels: "Canales vivos",
-        latency: "Latencia media",
+        decisions: "Decisiones",
+        proofs: "Recibos",
+        channels: "Canales",
+        latency: "Latencia",
+      },
+      path: {
+        source: "Senal",
+        agent: "Agente",
+        compute: "0G Compute",
+        hash: "Hash",
+        release: "Publicacion",
       },
       receipt: {
         source: "Senal fuente",
@@ -240,7 +260,7 @@ const COPY = {
       },
       whyTitle: "Por que blockchain aqui?",
       whyBody:
-        "Porque lo valioso no es solo publicar. Lo valioso es probar la ruta de ejecucion: que vio el agente, que decidio, cuando decidio y que lanzamiento preparo o envio.",
+        "X y YouTube muestran el resultado. 0G vuelve auditable la ruta: que se vio, quien decidio, que modelo corrio y que se publico.",
       checks: [
         "La identidad del agente y el modelo quedan registrados.",
         "La senal fuente y el output generado quedan hasheados.",

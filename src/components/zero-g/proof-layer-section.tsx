@@ -1,9 +1,20 @@
 "use client";
 
-import { Clock3, Cpu, Database, ExternalLink, FileCheck2, Hash, ShieldCheck } from "lucide-react";
+import {
+  ArrowRight,
+  CheckCircle2,
+  Clock3,
+  Cpu,
+  FileCheck2,
+  Hash,
+  Link2,
+  RadioTower,
+  ShieldCheck,
+  Sparkles,
+} from "lucide-react";
 import { Reveal } from "./reveal";
 import { useLocaleCopy } from "./locale-provider";
-import type { RuntimeDashboardSnapshot } from "@/lib/runtime-snapshot";
+import type { RuntimeDashboardSnapshot, RuntimeProof } from "@/lib/runtime-snapshot";
 
 function compactNumber(value: number | null | undefined) {
   if (value === null || value === undefined || Number.isNaN(value)) {
@@ -21,7 +32,7 @@ function shortValue(value: string | null | undefined, fallback = "--") {
     return fallback;
   }
 
-  return value.length > 26 ? `${value.slice(0, 14)}...${value.slice(-8)}` : value;
+  return value.length > 24 ? `${value.slice(0, 12)}...${value.slice(-7)}` : value;
 }
 
 function formatLatency(value: number | null | undefined) {
@@ -34,6 +45,15 @@ function formatLatency(value: number | null | undefined) {
   }
 
   return `${(value / 1000).toFixed(1)}s`;
+}
+
+function publicReleaseState(proof: RuntimeProof | null, fallback: string) {
+  const raw = proof?.youtubeStatus || proof?.xStatus || proof?.decision;
+  if (!raw || /demo|mock|simulation|sample/i.test(raw)) {
+    return fallback;
+  }
+
+  return raw;
 }
 
 export function ProofLayerSection({
@@ -71,148 +91,134 @@ export function ProofLayerSection({
     },
   ];
 
-  const receiptRows = [
+  const proofPath = [
     {
-      label: copy.proofLayer.receipt.source,
-      value: proof?.source ?? copy.proofLayer.fallback.source,
+      label: copy.proofLayer.path.source,
+      value: shortValue(proof?.source, copy.proofLayer.fallback.source),
+      icon: RadioTower,
     },
     {
-      label: copy.proofLayer.receipt.agent,
+      label: copy.proofLayer.path.agent,
       value: "orchestrator_agent",
+      icon: ShieldCheck,
     },
     {
-      label: copy.proofLayer.receipt.compute,
-      value: compute.providerLabel || compute.model || proof?.provider || "0G Compute",
+      label: copy.proofLayer.path.compute,
+      value: shortValue(compute.providerLabel || compute.model || proof?.provider, "0G Compute"),
+      icon: Cpu,
     },
     {
-      label: copy.proofLayer.receipt.model,
-      value: compute.model || proof?.model || "qwen/qwen2.5-omni-7b",
-    },
-    {
-      label: copy.proofLayer.receipt.hash,
+      label: copy.proofLayer.path.hash,
       value: proof?.shortHash || shortValue(proof?.hash, copy.proofLayer.fallback.hash),
+      icon: Hash,
     },
     {
-      label: copy.proofLayer.receipt.storage,
-      value: runtime?.status?.storage?.mode || proof?.storage || copy.proofLayer.fallback.storage,
+      label: copy.proofLayer.path.release,
+      value: publicReleaseState(proof, copy.proofLayer.fallback.release),
+      icon: Link2,
     },
   ];
 
   return (
     <section
       id="0g-proof"
-      className="border-t border-[#16313a] bg-[#071018] px-6 py-24 text-white lg:px-10 lg:py-32"
+      className="relative overflow-hidden border-y border-[#12303a] bg-[#071018] px-6 py-20 text-white lg:px-10 lg:py-28"
     >
-      <div className="mx-auto max-w-[1240px]">
-        <div className="grid gap-12 lg:grid-cols-[0.92fr_1.08fr] lg:items-start lg:gap-16">
+      <div
+        className="absolute inset-0 bg-cover bg-center opacity-35"
+        style={{ backgroundImage: "url('/escalade/proof-background.jpeg')" }}
+        aria-hidden="true"
+      />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_20%,rgba(77,255,226,0.18),transparent_34%),linear-gradient(90deg,rgba(4,12,17,0.96),rgba(4,12,17,0.72)_48%,rgba(4,12,17,0.9))]" />
+      <div className="absolute left-1/2 top-0 h-px w-[min(1180px,86vw)] -translate-x-1/2 bg-gradient-to-r from-transparent via-[#95fff0]/50 to-transparent" />
+
+      <div className="relative mx-auto max-w-[1180px]">
+        <div className="grid gap-10 lg:grid-cols-[0.86fr_1.14fr] lg:items-center lg:gap-14">
           <Reveal>
-            <p className="text-[12px] font-medium uppercase tracking-[0.24em] text-[#8ef5dd]">
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#7ff7e8]/25 bg-[#b9fff6]/10 px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#bafff5]">
+              <Sparkles className="size-3.5" strokeWidth={1.8} />
               {copy.proofLayer.eyebrow}
-            </p>
-            <h2 className="mt-5 max-w-[720px] text-[42px] font-semibold leading-[0.96] tracking-[-0.055em] text-white sm:text-[58px] lg:text-[74px]">
+            </div>
+
+            <h2 className="mt-6 max-w-[620px] text-[44px] font-semibold leading-[0.95] tracking-[-0.055em] text-white sm:text-[58px] lg:text-[70px]">
               {copy.proofLayer.title}
             </h2>
-            <p className="mt-6 max-w-[620px] text-[17px] leading-8 text-[#b7cbd1]">
+            <p className="mt-6 max-w-[560px] text-[16px] leading-7 text-[#c8dce1]">
               {copy.proofLayer.description}
             </p>
 
-            <div className="mt-8 flex flex-wrap gap-3">
-              <a
-                href="https://escalade.dev/api/runtime/status"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-[#254651] bg-white/[0.03] px-4 py-2 text-[12px] font-medium uppercase tracking-[0.18em] text-[#d9fff7] transition-colors hover:bg-white/[0.07]"
-              >
-                {copy.proofLayer.statusLink}
-                <ExternalLink className="size-3.5" strokeWidth={1.8} />
-              </a>
-              <a
-                href="https://escalade.dev/api/runtime/proofs"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-[#254651] bg-white/[0.03] px-4 py-2 text-[12px] font-medium uppercase tracking-[0.18em] text-[#d9fff7] transition-colors hover:bg-white/[0.07]"
-              >
-                {copy.proofLayer.proofsLink}
-                <ExternalLink className="size-3.5" strokeWidth={1.8} />
-              </a>
-            </div>
-          </Reveal>
-
-          <Reveal delayMs={120}>
-            <div className="grid gap-4 sm:grid-cols-2">
+            <div className="mt-8 grid max-w-[560px] grid-cols-2 gap-3 sm:grid-cols-4">
               {stats.map(({ label, value, icon: Icon }) => (
                 <div
                   key={label}
-                  className="min-h-[138px] rounded-[26px] border border-[#183742] bg-[#0b1720] p-5 shadow-[0_24px_80px_rgba(0,0,0,0.18)]"
+                  className="rounded-2xl border border-[#7ff7e8]/18 bg-[#071018]/62 p-4 shadow-[0_18px_70px_rgba(0,0,0,0.2)] backdrop-blur-md"
                 >
-                  <div className="flex items-start justify-between gap-4">
-                    <p className="max-w-[120px] text-[11px] uppercase tracking-[0.22em] text-[#7f9ba7]">
+                  <div className="flex items-center justify-between gap-2">
+                    <p className="text-[10px] uppercase tracking-[0.2em] text-[#8eb5bd]">
                       {label}
                     </p>
-                    <Icon className="size-4 text-[#8ef5dd]" strokeWidth={1.7} />
+                    <Icon className="size-3.5 shrink-0 text-[#8ef5dd]" strokeWidth={1.7} />
                   </div>
-                  <p className="mt-7 text-[42px] font-semibold leading-none tracking-[-0.04em] text-white">
+                  <p className="mt-4 text-[26px] font-semibold leading-none tracking-[-0.03em]">
                     {value}
                   </p>
                 </div>
               ))}
             </div>
           </Reveal>
-        </div>
 
-        <div className="mt-14 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-          <Reveal delayMs={180}>
-            <div className="overflow-hidden rounded-[30px] border border-[#183742] bg-[#0a141b] shadow-[0_36px_120px_rgba(0,0,0,0.25)]">
-              <div className="flex items-center justify-between border-b border-[#183742] px-5 py-4">
-                <div className="flex items-center gap-2">
-                  <span className="size-2.5 rounded-full bg-[#ff5f56]" />
-                  <span className="size-2.5 rounded-full bg-[#ffbd2e]" />
-                  <span className="size-2.5 rounded-full bg-[#27c93f]" />
+          <Reveal delayMs={120}>
+            <div className="relative">
+              <div className="absolute -inset-8 rounded-[46px] bg-[#55ffe0]/10 blur-3xl" />
+              <div className="relative overflow-hidden rounded-[34px] border border-[#7ff7e8]/22 bg-[#071018]/72 p-5 shadow-[0_36px_120px_rgba(0,0,0,0.32)] backdrop-blur-xl sm:p-7">
+                <div className="flex flex-wrap items-center justify-between gap-4 border-b border-[#7ff7e8]/14 pb-5">
+                  <div>
+                    <p className="text-[11px] uppercase tracking-[0.24em] text-[#8ef5dd]">
+                      {copy.proofLayer.cardEyebrow}
+                    </p>
+                    <h3 className="mt-2 text-[28px] font-semibold leading-tight tracking-[-0.04em] text-white">
+                      {copy.proofLayer.cardTitle}
+                    </h3>
+                  </div>
+                  <div className="rounded-full border border-[#7ff7e8]/22 bg-[#d9fff7] px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#071018]">
+                    0G
+                  </div>
                 </div>
-                <span className="font-mono text-[11px] uppercase tracking-[0.22em] text-[#7f9ba7]">
-                  {copy.proofLayer.receiptTitle}
-                </span>
-              </div>
 
-              <div className="grid gap-px bg-[#183742] md:grid-cols-2">
-                {receiptRows.map((row) => (
-                  <div key={row.label} className="bg-[#0a141b] px-5 py-5">
-                    <p className="text-[11px] uppercase tracking-[0.22em] text-[#7f9ba7]">
-                      {row.label}
-                    </p>
-                    <p className="mt-3 break-words font-mono text-[13px] leading-6 text-[#e6fff9]">
-                      {row.value}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </Reveal>
+                <div className="mt-6 grid gap-3">
+                  {proofPath.map(({ label, value, icon: Icon }, index) => (
+                    <div
+                      key={label}
+                      className="group grid grid-cols-[auto_1fr_auto] items-center gap-4 rounded-2xl border border-[#7ff7e8]/12 bg-white/[0.035] px-4 py-3 transition-colors hover:border-[#7ff7e8]/28 hover:bg-white/[0.06]"
+                    >
+                      <span className="flex size-10 items-center justify-center rounded-full border border-[#7ff7e8]/22 bg-[#092028] text-[#9ffff1]">
+                        <Icon className="size-4" strokeWidth={1.7} />
+                      </span>
+                      <span className="min-w-0">
+                        <span className="block text-[10px] uppercase tracking-[0.22em] text-[#8eb5bd]">
+                          {label}
+                        </span>
+                        <span className="mt-1 block truncate font-mono text-[12px] text-[#f2fffc]">
+                          {value}
+                        </span>
+                      </span>
+                      {index < proofPath.length - 1 ? (
+                        <ArrowRight
+                          className="size-4 text-[#7ff7e8]/55 transition-transform group-hover:translate-x-1"
+                          strokeWidth={1.7}
+                        />
+                      ) : (
+                        <CheckCircle2 className="size-4 text-[#8ef5dd]" strokeWidth={1.8} />
+                      )}
+                    </div>
+                  ))}
+                </div>
 
-          <Reveal delayMs={240}>
-            <div className="h-full rounded-[30px] border border-[#183742] bg-[radial-gradient(circle_at_80%_20%,rgba(65,246,204,0.16),transparent_34%),#0b1720] p-6">
-              <div className="flex size-12 items-center justify-center rounded-full border border-[#2c5f68] bg-[#d9fff7] text-[#071018]">
-                <Hash className="size-5" strokeWidth={1.8} />
-              </div>
-              <h3 className="mt-8 text-[30px] font-semibold leading-tight tracking-[-0.04em] text-white">
-                {copy.proofLayer.whyTitle}
-              </h3>
-              <p className="mt-4 text-[15px] leading-7 text-[#b7cbd1]">
-                {copy.proofLayer.whyBody}
-              </p>
-
-              <div className="mt-8 grid gap-3">
-                {copy.proofLayer.checks.map((item) => (
-                  <div
-                    key={item}
-                    className="flex items-center gap-3 rounded-2xl border border-[#183742] bg-black/10 px-4 py-3"
-                  >
-                    <Database className="size-4 shrink-0 text-[#8ef5dd]" strokeWidth={1.7} />
-                    <span className="text-[13px] leading-6 text-[#d9fff7]">
-                      {item}
-                    </span>
-                  </div>
-                ))}
+                <div className="mt-6 rounded-3xl border border-[#7ff7e8]/14 bg-[#d9fff7]/8 p-5">
+                  <p className="text-[14px] leading-7 text-[#d9fff7]">
+                    {copy.proofLayer.whyBody}
+                  </p>
+                </div>
               </div>
             </div>
           </Reveal>
