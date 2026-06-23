@@ -51,6 +51,14 @@ const runtimeBaseUrl =
     ? "https://escalade.dev/api/runtime"
     : `${siteUrl}/api/runtime`);
 
+function publicStatus(value: string | null | undefined) {
+  if (!value || /demo|mock|simulation|sample/i.test(value)) {
+    return null;
+  }
+
+  return value;
+}
+
 export async function getRuntimeDashboardSnapshot() {
   try {
     const response = await fetch(`${runtimeBaseUrl}/dashboard`, {
@@ -62,7 +70,19 @@ export async function getRuntimeDashboardSnapshot() {
       return null;
     }
 
-    return (await response.json()) as RuntimeDashboardSnapshot;
+    const snapshot = (await response.json()) as RuntimeDashboardSnapshot;
+
+    return {
+      generatedAt: snapshot.generatedAt,
+      metrics: snapshot.metrics,
+      status: snapshot.status,
+      proofs: snapshot.proofs?.slice(0, 1).map((proof) => ({
+        ...proof,
+        decision: publicStatus(proof.decision),
+        xStatus: publicStatus(proof.xStatus),
+        youtubeStatus: publicStatus(proof.youtubeStatus),
+      })),
+    } satisfies RuntimeDashboardSnapshot;
   } catch {
     return null;
   }
