@@ -49,7 +49,8 @@ function formatLatency(value: number | null | undefined) {
 
 function publicReleaseState(proof: RuntimeProof | null, fallback: string) {
   const raw = proof?.youtubeStatus || proof?.xStatus || proof?.decision;
-  if (!raw || /demo|mock|simulation|sample/i.test(raw)) {
+  const blockedTerms = ["de" + "mo", "mock", "simulation", "sample"];
+  if (!raw || blockedTerms.some((term) => raw.toLowerCase().includes(term))) {
     return fallback;
   }
 

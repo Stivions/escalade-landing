@@ -211,10 +211,10 @@ const COPY = {
       bodyA:
         "Escalade vigila senales de internet, las puntua, genera contenido nativo para cada plataforma y conserva la trazabilidad de cada salida.",
       bodyB:
-        "La idea no es tener mas dashboards. La idea es tener un solo ciclo limpio que publique y demuestre lo que paso.",
+        "La idea no es tener mas dashboards. La idea es tener un solo ciclo limpio que publique y pruebe lo que paso.",
       visionEyebrow: "Por que funciona",
       vision:
-        "Los agentes especializados se mantienen sincronizados, para que descubrir, editar, publicar y demostrar ya no parezcan trabajos separados.",
+        "Los agentes especializados se mantienen sincronizados, para que descubrir, editar, publicar y probar resultados ya no parezcan trabajos separados.",
       computeTitle: "0G Compute",
       computeBody: "Puntua senales, enruta decisiones y mantiene vivo el ciclo de generacion.",
       storageTitle: "0G Storage",

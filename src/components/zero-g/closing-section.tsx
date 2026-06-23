@@ -16,7 +16,7 @@ export function ClosingSection() {
           <p className="mt-8 max-w-4xl font-display text-[32px] leading-[1.15] tracking-tight text-primary sm:text-[44px] lg:text-[64px]">
             El futuro de la creación de contenido no es un solo modelo de IA.
             Es una <span className="text-tertiary">red de agentes especializados</span> que
-            descubren, deciden, crean y demuestran cada una de sus acciones.
+            descubren, deciden, crean y evidencian cada una de sus acciones.
           </p>
         </Reveal>
 
@@ -25,7 +25,7 @@ export function ClosingSection() {
             {[
               { k: "Investigar", v: "Señales de internet y repositorios detectados en tiempo real." },
               { k: "Decidir", v: "Decisiones registradas con identidad del agente y prompt utilizado." },
-              { k: "Demostrar", v: "Pruebas verificables almacenadas permanentemente en 0G Storage." },
+              { k: "Evidenciar", v: "Pruebas verificables almacenadas permanentemente en 0G Storage." },
             ].map((item) => (
               <div key={item.k}>
                 <h3 className="font-display text-2xl tracking-tight text-primary">

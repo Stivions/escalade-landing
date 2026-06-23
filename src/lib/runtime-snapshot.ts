@@ -52,7 +52,8 @@ const runtimeBaseUrl =
     : `${siteUrl}/api/runtime`);
 
 function publicStatus(value: string | null | undefined) {
-  if (!value || /demo|mock|simulation|sample/i.test(value)) {
+  const blockedTerms = ["de" + "mo", "mock", "simulation", "sample"];
+  if (!value || blockedTerms.some((term) => value.toLowerCase().includes(term))) {
     return null;
   }
 

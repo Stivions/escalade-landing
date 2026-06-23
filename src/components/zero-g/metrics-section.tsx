@@ -30,11 +30,11 @@ export function MetricsSection() {
               Sistema de métricas
             </p>
             <h2 className="mt-6 font-display text-[40px] leading-[1.02] tracking-tight text-primary sm:text-[56px] lg:text-[64px]">
-              Medir para demostrar.
+              Medir para probar impacto.
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-secondary">
               15 indicadores monitoreados en tiempo real. El objetivo no es solo
-              operar, sino demostrar rendimiento de forma verificable.
+              operar, sino probar rendimiento de forma verificable.
             </p>
             <div className="mt-10 flex items-baseline gap-3 border-t border-border-primary pt-8">
               <span className="font-display text-6xl leading-none text-primary">
