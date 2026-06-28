@@ -10,16 +10,16 @@ const COPY = {
   en: {
     nav: {
       problem: "Problem",
-      why0g: "Why 0G",
+      proof: "Proof",
       runtime: "Runtime",
-      results: "Proof",
-      partner: "0G Partner",
+      results: "Results",
+      partner: "Production",
       english: "EN",
       spanish: "ES",
     },
     hero: {
-      eyebrow: "Built for social execution with 0G",
-      title: "AI agents for X and YouTube, powered by 0G Compute.",
+      eyebrow: "Built for social execution",
+      title: "AI agents for X and YouTube, powered by Escalade.",
       description:
         "Escalade turns live internet signals into channel-ready posts, Shorts, and verifiable release history.",
     },
@@ -41,14 +41,14 @@ const COPY = {
       visionEyebrow: "Why it lands",
       vision:
         "Specialized agents stay in sync, so discovery, editing, publishing, and proof stop feeling like separate jobs.",
-      computeTitle: "0G Compute",
-      computeBody: "Scores signals, routes decisions, and keeps the generation loop moving.",
-      storageTitle: "0G Storage",
+      computeTitle: "Signal scoring",
+      computeBody: "Scores opportunities, routes decisions, and keeps the generation loop moving.",
+      storageTitle: "Proof vault",
       storageBody:
-        "The integration is ready to upload release proofs when enabled; local hashes remain the safe fallback.",
+        "Release receipts can be stored externally when enabled; local hashes remain the safe fallback.",
     },
     proofLayer: {
-      eyebrow: "Why 0G",
+      eyebrow: "Publication proof",
       title: "Proof that agents really executed.",
       description:
         "Escalade records the signal, agent, model, content hash, and release state behind every post or Short.",
@@ -72,21 +72,21 @@ const COPY = {
       path: {
         source: "Signal",
         agent: "Agent",
-        compute: "0G Compute",
+        compute: "AI provider",
         hash: "Hash",
         release: "Release",
       },
       receipt: {
         source: "Source signal",
         agent: "Agent identity",
-        compute: "0G provider",
+        compute: "AI provider",
         model: "Model",
         hash: "Content hash",
         storage: "Proof layer",
       },
-      whyTitle: "Why blockchain here?",
+      whyTitle: "Why proof here?",
       whyBody:
-        "X and YouTube show the output. 0G makes the execution trail auditable: what was seen, who decided, which model ran, and what got released.",
+        "X and YouTube show the output. Escalade shows the execution trail: what was seen, who decided, which model ran, and what got released.",
       checks: [
         "Agent identity and model are recorded with each decision.",
         "The source signal and generated output are hashed.",
@@ -104,7 +104,7 @@ const COPY = {
       latestUploads: "Latest uploads",
       viewChannel: "Open channel",
       sourceLabel: "Data source",
-      sourceValue: "YouTube public pages + RSS",
+      sourceValue: "YouTube Data API + public RSS",
       open: "Open",
       latestRelease: "Latest release",
       channelSource: "Channel source",
@@ -165,13 +165,13 @@ const COPY = {
       project: "Project",
       collaborators: "Collaborators",
       publicRepo: "Public repo",
-      discord: "0G Discord",
+      discord: "Discord",
       problem: "Problem",
       flow: "Flow",
-      why0g: "Why 0G",
+      proof: "Proof",
       runtime: "Runtime",
-      results: "Proof",
-      tagline: "Autonomous / Verifiable / 0G",
+      results: "Results",
+      tagline: "Autonomous / Verifiable / Escalade",
     },
     audio: {
       play: "Play audio",
@@ -184,55 +184,55 @@ const COPY = {
   es: {
     nav: {
       problem: "Problema",
-      why0g: "Por que 0G",
+      proof: "Pruebas",
       runtime: "Tiempo real",
-      results: "Pruebas",
-      partner: "Partner 0G",
+      results: "Resultados",
+      partner: "Producción",
       english: "EN",
       spanish: "ES",
     },
     hero: {
-      eyebrow: "Construido para ejecucion social con 0G",
-      title: "Agentes de IA para X y YouTube, impulsados por 0G Compute.",
+      eyebrow: "Construido para ejecución social",
+      title: "Agentes de IA para X y YouTube, impulsados por Escalade.",
       description:
-        "Escalade convierte senales vivas de internet en posts, Shorts e historial verificable de cada lanzamiento.",
+        "Escalade convierte señales vivas de internet en posts, Shorts e historial verificable de cada lanzamiento.",
     },
     problem: {
       eyebrow: "El problema",
-      title: ["Una senal.", "Cinco relevos."],
-      side: "Cada relevo enfria la oportunidad antes de que salga en vivo.",
+      title: ["Una señal.", "Cinco relevos."],
+      side: "Cada relevo enfría la oportunidad antes de que salga en vivo.",
       centerEyebrow: "Una oportunidad",
-      centerTitle: ["La senal", "se fragmenta."],
+      centerTitle: ["La señal", "se fragmenta."],
       centerCaption: "entra viva, sale tarde",
     },
     solution: {
       eyebrow: "El sistema",
-      title: "Un ciclo completo. Autonomo. Auditable.",
+      title: "Un ciclo completo. Autónomo. Auditable.",
       bodyA:
-        "Escalade vigila senales de internet, las puntua, genera contenido nativo para cada plataforma y conserva la trazabilidad de cada salida.",
+        "Escalade vigila señales de internet, las puntúa, genera contenido nativo para cada plataforma y conserva la trazabilidad de cada salida.",
       bodyB:
-        "La idea no es tener mas dashboards. La idea es tener un solo ciclo limpio que publique y pruebe lo que paso.",
-      visionEyebrow: "Por que funciona",
+        "La idea no es tener más dashboards. La idea es tener un solo ciclo limpio que publique y pruebe lo que pasó.",
+      visionEyebrow: "Por qué funciona",
       vision:
         "Los agentes especializados se mantienen sincronizados, para que descubrir, editar, publicar y probar resultados ya no parezcan trabajos separados.",
-      computeTitle: "0G Compute",
-      computeBody: "Puntua senales, enruta decisiones y mantiene vivo el ciclo de generacion.",
-      storageTitle: "0G Storage",
+      computeTitle: "Puntaje de señales",
+      computeBody: "Puntúa oportunidades, enruta decisiones y mantiene vivo el ciclo de generación.",
+      storageTitle: "Bóveda de pruebas",
       storageBody:
-        "La integracion puede subir pruebas cuando se habilita; los hashes locales siguen siendo el fallback seguro.",
+        "Los recibos de lanzamiento pueden almacenarse externamente cuando se habilita; los hashes locales siguen siendo el fallback seguro.",
     },
     proofLayer: {
-      eyebrow: "Por que 0G",
+      eyebrow: "Prueba de publicación",
       title: "Prueba de que los agentes ejecutaron.",
       description:
-        "Escalade registra la senal, el agente, el modelo, el hash del contenido y el estado de publicacion de cada post o Short.",
+        "Escalade registra la señal, el agente, el modelo, el hash del contenido y el estado de publicación de cada post o Short.",
       statusLink: "Estado runtime",
       proofsLink: "Proof ledger",
       receiptTitle: "Recibo de lanzamiento",
-      cardEyebrow: "Ruta de publicacion",
-      cardTitle: "De senal a recibo",
+      cardEyebrow: "Ruta de publicación",
+      cardTitle: "De señal a recibo",
       fallback: {
-        source: "ultima senal de internet",
+        source: "última señal de internet",
         hash: "hash pendiente",
         storage: "fallback local de prueba",
         release: "lanzamiento preparado",
@@ -244,65 +244,65 @@ const COPY = {
         latency: "Latencia",
       },
       path: {
-        source: "Senal",
+        source: "Señal",
         agent: "Agente",
-        compute: "0G Compute",
+        compute: "Proveedor IA",
         hash: "Hash",
-        release: "Publicacion",
+        release: "Publicación",
       },
       receipt: {
-        source: "Senal fuente",
+        source: "Señal fuente",
         agent: "Identidad del agente",
-        compute: "Proveedor 0G",
+        compute: "Proveedor IA",
         model: "Modelo",
         hash: "Hash del contenido",
         storage: "Capa de prueba",
       },
-      whyTitle: "Por que blockchain aqui?",
+      whyTitle: "¿Por qué pruebas aquí?",
       whyBody:
-        "X y YouTube muestran el resultado. 0G vuelve auditable la ruta: que se vio, quien decidio, que modelo corrio y que se publico.",
+        "X y YouTube muestran el resultado. Escalade muestra la ruta de ejecución: qué se vio, quién decidió, qué modelo corrió y qué se publicó.",
       checks: [
         "La identidad del agente y el modelo quedan registrados.",
-        "La senal fuente y el output generado quedan hasheados.",
+        "La señal fuente y el output generado quedan hasheados.",
         "Los lanzamientos aprobados pueden adjuntar el link final de X o YouTube.",
       ],
     },
     runtime: {
-      eyebrow: "Estado publico en vivo",
+      eyebrow: "Estado público en vivo",
       title: "Datos reales de YouTube, refrescados desde la fuente.",
       description:
-        "Aqui no hay totales inventados. Este panel lee numeros publicos actuales y ultimas subidas directamente desde YouTube.",
+        "Aquí no hay totales inventados. Este panel lee números públicos actuales y últimas subidas directamente desde YouTube.",
       channels: "canales",
       updated: "actualizado",
       unavailable: "fuente no disponible",
-      latestUploads: "Ultimas subidas",
+      latestUploads: "Últimas subidas",
       viewChannel: "Abrir canal",
       sourceLabel: "Fuente",
-      sourceValue: "Paginas publicas + RSS de YouTube",
+      sourceValue: "YouTube Data API + RSS público",
       open: "Abrir",
-      latestRelease: "Ultimo lanzamiento",
+      latestRelease: "Último lanzamiento",
       channelSource: "Fuente del canal",
-      publicFeed: "Feed publico",
+      publicFeed: "Feed público",
       channelsLive: "Canales activos",
-      lastUpdate: "Ultima actualizacion",
+      lastUpdate: "Última actualización",
       subscribers: "Suscriptores",
       views: "Vistas",
       videos: "Videos",
-      latestVideo: "Ultima subida",
+      latestVideo: "Última subida",
       recentUploads: "Subidas recientes",
       published: "Publicado",
       autoRefresh: "Auto refresh",
       autoRefreshValue: "2 min",
       empty: "No se encontraron subidas recientes.",
-      loading: "Cargando snapshot publico del canal...",
+      loading: "Cargando snapshot público del canal...",
       noData: "No hay datos de canales disponibles.",
-      xPending: "El feed en vivo de X aparecera cuando conectemos su fuente real.",
+      xPending: "El feed en vivo de X aparecerá cuando conectemos su fuente real.",
     },
     results: {
       eyebrow: "Pruebas",
       title: "Output publicado, mostrado con evidencia real.",
       description:
-        "Una pared de pruebas mas fina para la landing: capturas reales, mejor encuadre y una vista enfocada a la vez.",
+        "Una pared de pruebas más fina para la landing: capturas reales, mejor encuadre y una vista enfocada a la vez.",
       openLabel: "Vista",
       links: "Links",
       items: [
@@ -310,42 +310,42 @@ const COPY = {
           src: "/results/twitter-1.jpg",
           title: "Rendimiento en X",
           meta: "Cuenta operada por la red",
-          caption: "Prueba de que la distribucion ya esta generando alcance en X.",
+          caption: "Prueba de que la distribución ya está generando alcance en X.",
         },
         {
           src: "/results/youtube-1.jpg",
           title: "Resumen de YouTube",
           meta: "Captura de Studio",
-          caption: "Rendimiento general del canal con crecimiento publico visible.",
+          caption: "Rendimiento general del canal con crecimiento público visible.",
         },
         {
           src: "/results/youtube-2.jpg",
           title: "Rendimiento del contenido",
           meta: "Captura de Studio",
-          caption: "Uploads individuales y momentum a traves del mix del canal.",
+          caption: "Uploads individuales y momentum a través del mix del canal.",
         },
         {
           src: "/results/youtube-3.jpg",
           title: "Audiencia",
           meta: "Captura de Studio",
-          caption: "Comportamiento de la audiencia y atencion recurrente entre lanzamientos.",
+          caption: "Comportamiento de la audiencia y atención recurrente entre lanzamientos.",
         },
       ],
     },
     footer: {
       description:
-        "Infraestructura autonoma de contenido para X y YouTube, con prueba publica en cada ciclo de lanzamiento.",
+        "Infraestructura autónoma de contenido para X y YouTube, con prueba pública en cada ciclo de lanzamiento.",
       sections: "Secciones",
       project: "Proyecto",
       collaborators: "Colaboradores",
-      publicRepo: "Repo publico",
-      discord: "Discord 0G",
+      publicRepo: "Repo público",
+      discord: "Discord",
       problem: "Problema",
       flow: "Flujo",
-      why0g: "Por que 0G",
+      proof: "Pruebas",
       runtime: "Tiempo real",
-      results: "Pruebas",
-      tagline: "Autonomo / Verificable / 0G",
+      results: "Resultados",
+      tagline: "Autónomo / Verificable / Escalade",
     },
     audio: {
       play: "Reproducir audio",
@@ -365,11 +365,7 @@ type LocaleContextValue = {
 
 const LocaleContext = React.createContext<LocaleContextValue | null>(null);
 
-export function LocaleProvider({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export function LocaleProvider({ children }: { children: React.ReactNode }) {
   const [locale, setLocale] = React.useState<LandingLocale>("en");
   const hydratedRef = React.useRef(false);
 
@@ -401,9 +397,7 @@ export function LocaleProvider({
     [locale],
   );
 
-  return (
-    <LocaleContext.Provider value={value}>{children}</LocaleContext.Provider>
-  );
+  return <LocaleContext.Provider value={value}>{children}</LocaleContext.Provider>;
 }
 
 export function useLocaleCopy() {

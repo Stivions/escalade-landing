@@ -1,13 +1,13 @@
-import { TopNav } from "@/components/zero-g/top-nav";
-import { HeroSection } from "@/components/zero-g/hero-section";
-import { ProblemSection } from "@/components/zero-g/problem-section";
-import { SolutionSection } from "@/components/zero-g/solution-section";
-import { ProofLayerSection } from "@/components/zero-g/proof-layer-section";
-import { MultiAgentSection } from "@/components/zero-g/multi-agent-section";
-import { ResultsSection } from "@/components/zero-g/results-section";
-import { SiteFooter } from "@/components/zero-g/site-footer";
-import { AudioPlayer } from "@/components/zero-g/audio-player";
-import { LocaleProvider } from "@/components/zero-g/locale-provider";
+import { TopNav } from "@/components/escalade/top-nav";
+import { HeroSection } from "@/components/escalade/hero-section";
+import { ProblemSection } from "@/components/escalade/problem-section";
+import { SolutionSection } from "@/components/escalade/solution-section";
+import { ProofLayerSection } from "@/components/escalade/proof-layer-section";
+import { MultiAgentSection } from "@/components/escalade/multi-agent-section";
+import { ResultsSection } from "@/components/escalade/results-section";
+import { SiteFooter } from "@/components/escalade/site-footer";
+import { AudioPlayer } from "@/components/escalade/audio-player";
+import { LocaleProvider } from "@/components/escalade/locale-provider";
 import { getYoutubePublicSnapshot } from "@/lib/youtube-public-snapshot";
 import { getRuntimeDashboardSnapshot } from "@/lib/runtime-snapshot";
 

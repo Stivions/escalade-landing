@@ -27,7 +27,7 @@ export function SiteFooter() {
   const footerLinks = [
     { label: copy.footer.problem, href: "#problema" },
     { label: copy.footer.flow, href: "#flujo" },
-    { label: copy.footer.why0g, href: "#0g-proof" },
+    { label: copy.footer.proof, href: "#proof" },
     { label: copy.footer.runtime, href: "#agentes" },
     { label: copy.footer.results, href: "#resultados" },
   ];

@@ -77,7 +77,7 @@ export default async function OpengraphImage() {
             textTransform: "uppercase",
           }}
         >
-          Autónomo · Verificable · 0G
+          Autónomo · Verificable · Escalade
         </span>
       </div>
     ),

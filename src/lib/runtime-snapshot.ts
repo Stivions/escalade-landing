@@ -18,7 +18,7 @@ export type RuntimeDashboardSnapshot = {
     ai_decisions?: number;
     sources_analyzed?: number;
     proofs_generated?: number;
-    zero_g_proofs_stored?: number;
+    external_proofs_stored?: number;
     average_processing_time_ms?: number;
   };
   status?: {

@@ -105,7 +105,7 @@ export function ProofLayerSection({
     },
     {
       label: copy.proofLayer.path.compute,
-      value: shortValue(compute.providerLabel || compute.model || proof?.provider, "0G Compute"),
+      value: shortValue(compute.providerLabel || compute.model || proof?.provider, "AI provider"),
       icon: Cpu,
     },
     {
@@ -122,7 +122,7 @@ export function ProofLayerSection({
 
   return (
     <section
-      id="0g-proof"
+      id="proof"
       className="relative overflow-hidden border-y border-[#12303a] bg-[#071018] px-6 py-20 text-white lg:px-10 lg:py-28"
     >
       <div
@@ -182,7 +182,7 @@ export function ProofLayerSection({
                     </h3>
                   </div>
                   <div className="rounded-full border border-[#7ff7e8]/22 bg-[#d9fff7] px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#071018]">
-                    0G
+                    Proof
                   </div>
                 </div>
 

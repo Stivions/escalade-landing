@@ -1,7 +1,6 @@
 "use client";
 
 import * as React from "react";
-import Image from "next/image";
 import { Logo } from "./logo";
 import { useLocaleCopy } from "./locale-provider";
 
@@ -11,7 +10,7 @@ export function TopNav() {
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const navLinks = [
     { href: "#problema", label: copy.nav.problem },
-    { href: "#0g-proof", label: copy.nav.why0g },
+    { href: "#proof", label: copy.nav.proof },
     { href: "#agentes", label: copy.nav.runtime },
     { href: "#resultados", label: copy.nav.results },
   ];
@@ -81,16 +80,6 @@ export function TopNav() {
                   {copy.nav.spanish}
                 </button>
               </div>
-
-              <span className="flex size-7 items-center justify-center rounded-full bg-[#0b1418] shadow-[0_8px_24px_rgba(11,20,24,0.18)]">
-                <Image
-                  src="/escalade/0g-logo-white.png"
-                  alt="0G"
-                  width={18}
-                  height={18}
-                  className="h-[18px] w-auto"
-                />
-              </span>
 
               <span className="text-[12px] font-medium uppercase tracking-[0.18em] text-[#4b6a70]">
                 {copy.nav.partner}
